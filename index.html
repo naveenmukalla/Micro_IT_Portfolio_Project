@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Smooth scroll to section when clicking nav buttons
+        document.querySelectorAll("a[href^='#']").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    
+        // Simple form validation on submit
+        document.querySelector("form").addEventListener("submit", function(e) {
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim();
+    
+            if (!name || !email) {
+                alert("Please fill out all required fields.");
+                e.preventDefault(); // prevent form submission
+            } else {
+                alert("Form submitted successfully!");
+            }
+        });
+    
+        // Back to top button visibility
+        const topButton = document.querySelector(".fixedbutton");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        });
+    </script>
+    <!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init(); // initialize AOS
+</script>
+    <header>
+        <h1>Welcome To My Portfolio</h1>
+        <nav>
+            <a href="#about"><button class="button">About</button></a>
+            <a href="#skills"><button class="button">Skills</button></a>
+            <a href="#projects"><button class="button">Projects</button></a>
+            <a href="#contact"><button class="button">Contact</button></a>
+        </nav>
+        <button id="darkModeToggle" class="button">🌙 Dark Mode</button>
+    </header>
+
+    <main>
+        <section id="about" data-aos="fade-up">
+            <h1>Naveen Mukalla</h1>
+            <img src="my profile.jpg" alt="Naveen's profile photo">
+            <p>I am a passionate web developer focused on front-end technologies.</p>
+            <p>I am currently pursuing my B.Tech at <em>BVC Engineering College</em>, Odalarevu.</p>
+            <p>I learned Web Development from <strong>Code With Swaroop</strong>.</p>
+            <p>You can <a href="#projects"><strong>click here</strong></a> to see what I’ve built with HTML, CSS, and JavaScript.</p>
+        </section>
+
+        <section id="skills" data-aos="fade-left">
+            <h1>My Skills</h1>
+            <ul>
+                <li>Python (Basics)</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </section>
+
+        <section id="projects" data-aos="fade-right">
+            <h1>My Projects</h1>
+            <table border ="1">
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Portfolio Website</td>
+                        <td>A personal portfolio built using HTML, CSS, and JavaScript.</td>
+                    </tr>
+                    <tr>
+                        <td>Python Calculator</td>
+                        <td>A simple calculator project from the Code With Swaroop course.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact" data-aos="zoom-in">
+            <h1>Contact Me</h1>
+            <form action="#" method="POST">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Your name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Your email" required>
+                </div>
+                <div>
+                    <b>Gender:</b><br>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <b>Interests:</b><br>
+                    <input type="checkbox" id="coding" name="interests" value="coding">
+                    <label for="coding">Coding</label>
+                    <input type="checkbox" id="reading" name="interests" value="reading">
+                    <label for="reading">Reading</label>
+                </div>
+                <div>
+                    <label for="bio">Bio (max 200 characters):</label>
+                    <textarea id="bio" name="bio" maxlength="200" rows="4" placeholder="Tell me something about yourself..."></textarea>
+                </div>
+                <button type="submit" class="submit">Submit</button>
+                <p>Connect with me:</p>
+                <a href="https://www.linkedin.com/in/naveen-mukalla-103891343" target="_blank">LinkedIn</a> |
+                <a href="https://github.com/naveenmukalla" target="_blank">GitHub</a>
+            </form>
+        </section>
+    </main>
+
+    <a href="#">
+        <button class="fixedbutton">TOP</button>
+    </a>
+
+    <footer>
+        <p>&copy; 2025 Naveen Mukalla. All rights reserved.</p>
+    </footer>
+    <script>
+        const toggleButton = document.getElementById("darkModeToggle");
+        const body = document.body;
+    
+        // Load dark mode preference from localStorage
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark-mode");
+            toggleButton.textContent = "☀ Light Mode";
+        }
+    
+        toggleButton.addEventListener("click", () => {
+            body.classList.toggle("dark-mode");
+            if (body.classList.contains("dark-mode")) {
+                toggleButton.textContent = "☀ Light Mode";
+                localStorage.setItem("darkMode", "enabled");
+            } else {
+                toggleButton.textContent = "🌙 Dark Mode";
+                localStorage.setItem("darkMode", "disabled");
+            }
+        });
+    </script>
+</body>
+</html>

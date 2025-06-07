@@ -1,0 +1,210 @@
+body{
+    background-color: #f0f8ff;
+    font-size: 15px;
+    margin: 0;
+}
+*{
+    font-family: monospace;
+}
+header{
+    color: white;
+    text-align: center;
+    background-color: #2196f3;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    cursor: pointer;
+    height: 40px;
+    width: 140px;
+    margin: 15px;
+    border-radius: 10px;
+    transition: all 0.5s ease 0s;
+}
+h1{
+    font-size: 50px;
+    color: #2196f3;
+}
+header h1{
+    color: white;
+    margin: 0;
+}
+button:hover{
+    color: white;
+    background-color: darkblue;
+    transform: translateY(-10px);
+}
+img{
+    height: 200px;
+}
+main{
+    padding: 20px;
+}
+section{
+    height: 100vh;
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    padding: 7px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+form div{
+    margin: 5px 0;
+}
+.submit{
+    cursor: pointer;
+    height: 40px;
+    width: 140px;
+    border-radius: 10px;
+    color: white;
+    background-color: #2196f3;
+}
+input{
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    height: 25px;
+}
+.fixedbutton{
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        height: 70px;
+        width: 70px;
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+        color: white;
+        background-color: #2196f3;
+        font-size: 14px;
+}
+footer{
+    height: 124px;
+    color: lightgray;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+section h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    resize: vertical;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+form {
+    width: 100%;
+    max-width: 500px;
+}
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    .button {
+        width: 100px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    section {
+        height: auto;
+        padding: 20px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .fixedbutton {
+        height: 50px;
+        width: 50px;
+        font-size: 12px;
+    }
+}
+a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode header {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode h1 {
+    color: #90caf9;
+}
+
+body.dark-mode section {
+    background-color: #1a1a1a;
+    border-color: #444;
+}
+
+body.dark-mode footer {
+    background-color: #000;
+    color: #999;
+}
+
+body.dark-mode .button,
+body.dark-mode .submit,
+body.dark-mode .fixedbutton {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #999;
+}
+
+body.dark-mode .button:hover {
+    background-color: #555;
+}
