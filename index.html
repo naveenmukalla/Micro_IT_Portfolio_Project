@@ -5,49 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naveen's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // Smooth scroll to section when clicking nav buttons
-        document.querySelectorAll("a[href^='#']").forEach(anchor => {
-            anchor.addEventListener("click", function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                });
-            });
-        });
-    
-        // Simple form validation on submit
-        document.querySelector("form").addEventListener("submit", function(e) {
-            const name = document.querySelector("#name").value.trim();
-            const email = document.querySelector("#email").value.trim();
-    
-            if (!name || !email) {
-                alert("Please fill out all required fields.");
-                e.preventDefault(); // prevent form submission
-            } else {
-                alert("Form submitted successfully!");
-            }
-        });
-    
-        // Back to top button visibility
-        const topButton = document.querySelector(".fixedbutton");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 100) {
-                topButton.style.display = "block";
-            } else {
-                topButton.style.display = "none";
-            }
-        });
-    </script>
+   
     <!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init(); // initialize AOS
-</script>
     <header>
         <h1>Welcome To My Portfolio</h1>
         <nav>
@@ -137,14 +99,48 @@
             </form>
         </section>
     </main>
-
-    <a href="#">
-        <button class="fixedbutton">TOP</button>
-    </a>
-
     <footer>
         <p>&copy; 2025 Naveen Mukalla. All rights reserved.</p>
     </footer>
+     <script>
+        // Smooth scroll to section when clicking nav buttons
+        document.querySelectorAll("a[href^='#']").forEach(anchor => {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    
+        // Simple form validation on submit
+        document.querySelector("form").addEventListener("submit", function(e) {
+            const name = document.querySelector("#name").value.trim();
+            const email = document.querySelector("#email").value.trim();
+    
+            if (!name || !email) {
+                alert("Please fill out all required fields.");
+                e.preventDefault(); // prevent form submission
+            } else {
+                alert("Form submitted successfully!");
+            }
+        });
+    
+        // Back to top button visibility
+        const topButton = document.querySelector(".fixedbutton");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 100) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        });
+    </script>
+      <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+     AOS.init(); // initialize AOS
+    </script>
     <script>
         const toggleButton = document.getElementById("darkModeToggle");
         const body = document.body;
